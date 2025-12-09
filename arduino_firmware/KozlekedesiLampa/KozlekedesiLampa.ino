@@ -44,7 +44,6 @@ void setup() {
   pinMode(segD, OUTPUT); pinMode(segE, OUTPUT); pinMode(segF, OUTPUT); pinMode(segG, OUTPUT);
 
   // Bemenetek beállítása
-  pinMode(gombPin, INPUT);
   pinMode(ldrPin, INPUT);
   
   pinMode(btnEjszaka, INPUT);
@@ -184,12 +183,15 @@ void automataCiklus() {
   digitalWrite(autoSarga, HIGH); delay(1000);
   digitalWrite(autoSarga, LOW); 
 }
-
+bool ellenorizMegszakitast() {
   // Fényérzékelő ellenőrzése
   fenyero = analogRead(ldrPin);
   if (iotStatusz == 'A' && fenyero < soteT_KUSZOB) {
      return true;
   }
+  kezelParancsokat();
+  if (iotStatusz == 'E') return true;
+  
   return false;
 }
 
