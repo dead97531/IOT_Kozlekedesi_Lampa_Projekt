@@ -28,6 +28,8 @@ Ez a projekt egy intelligens közlekedési csomópont szimulációja, amely a mo
 
 * SimulIDE
 
+* Arduino IDE
+
 * Python 3.x
 
 * Virtual Studio Code
@@ -42,14 +44,19 @@ Ez a projekt egy intelligens közlekedési csomópont szimulációja, amely a mo
 
 A Free Virtual Serial Ports alkalmazással létre kell hozni egy local bridge-et, COM1 és COM2 névvel.
 
+## Arduino IDE beállítása
 
+1. Meg kell nyitni a .ino fájlt.
+2. Létre kell hozni egy sketch mappát, amit az IDE felkínál.
+3. Select Board -> Arduino Uno
+4. Sketch -> Export Compiled Binary
 
 ## SimulIDE beállítása:
 
 
 
 1. Meg kell nyitni a .sim1 fájlt. (Open circuit gomb)
-2. Jobb klikk az Arduinón -> mega328-109 -> loadfirmware
+2. Jobb klikk az Arduinón -> mega328-109 -> loadfirmware -> IOT_Kozlekedesi_Lampa_Projekt\arduino_firmware\KozlekedesiLampa\build\arduino.avr.uno\KozlekedesiLampa.ino.hex
 
 
 
