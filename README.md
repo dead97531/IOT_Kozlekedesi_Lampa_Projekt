@@ -1,4 +1,4 @@
-\# Közlekedési Csomópont Szimulátor
+# Közlekedési Csomópont Szimulátor
 
 
 
@@ -6,37 +6,37 @@ Ez a projekt egy intelligens közlekedési csomópont szimulációja, amely a mo
 
 
 
-\## A rendszer három fő rétegből áll:
+## A rendszer három fő rétegből áll:
 
 
 
-\*\*Végponti eszköz (Edge Device)\*\*: Arduino Uno, amely a szenzorokat olvassa és a lámpákat vezérli.
+**Végponti eszköz (Edge Device)**: Arduino Uno, amely a szenzorokat olvassa és a lámpákat vezérli.
 
 
 
-\*\*Kommunikációs réteg\*\*: Soros adatátvitel (UART) egy definiált protokollon keresztül.
+**Kommunikációs réteg**: Soros adatátvitel (UART) egy definiált protokollon keresztül.
 
 
 
-\*\*Irányítóközpont (Gateway/Dashboard)\*\*: Python alapú grafikus felület a távfelügyelethez és vezérléshez.
+**Irányítóközpont (Gateway/Dashboard)**: Python alapú grafikus felület a távfelügyelethez és vezérléshez.
 
 
 
-\## Szükséges szoftverek:
+## Szükséges szoftverek:
 
 
 
-SimulIDE
+* SimulIDE
 
-Python 3.x
+* Python 3.x
 
-Virtual Studio Code
+* Virtual Studio Code
 
-Free Virtual Serial Ports
+* Free Virtual Serial Ports
 
 
 
-\## Virtuális portok létrehozása:
+## Virtuális portok létrehozása:
 
 
 
@@ -44,7 +44,7 @@ A Free Virtual Serial Ports alkalmazással létre kell hozni egy local bridge-et
 
 
 
-\## SimulIDE beállítása:
+## SimulIDE beállítása:
 
 
 
@@ -53,7 +53,7 @@ A Free Virtual Serial Ports alkalmazással létre kell hozni egy local bridge-et
 
 
 
-\## Python:
+## Python:
 
 
 
@@ -61,25 +61,25 @@ pip install pyserial
 
 
 
-\## Működés:
+## Működés:
 
 
 
-A rendszer alapvetően \*\*Automata\*\* módban indul:
+A rendszer alapvetően **Automata** módban indul:
 
 
 
-1\. \*\*Nappal:\*\* 9 másodperces ciklusokban váltja a szabad jelzést. A kijelzőn visszaszámlálás látható, amely jelzi, mennyi idő van hátra a váltásig.
+1. **Nappal:** 9 másodperces ciklusokban váltja a szabad jelzést. A kijelzőn visszaszámlálás látható, amely jelzi, mennyi idő van hátra a váltásig.
 
-2\. \*\*Éjszaka (vagy gombnyomásra):\*\* A rendszer energiatakarékos módba lép, a lámpák kikapcsolnak, és csak a sárga jelzés villog figyelmeztetésként.
+2. **Éjszaka (vagy gombnyomásra):** A rendszer energiatakarékos módba lép, a lámpák kikapcsolnak, és csak a sárga jelzés villog figyelmeztetésként.
 
 
 
-\## IoT Funkciók
+## IoT Funkciók
 
 A rendszer "9600 baud" sebességgel kommunikál UART porton.
 
-\* \*\*Adatküldés:\*\* "F:fenyero|S:statusz" formátumban (pl. "F:512|S:A").
+* **Adatküldés:** "F:fenyero|S:statusz" formátumban (pl. "F:512|S:A").
 
-\* \*\*Parancs fogadás:\*\* "E" (Éjszaka), "N" (Nappal), "A" (Automata).
+* **Parancs fogadás:** "E" (Éjszaka), "N" (Nappal), "A" (Automata).
 
